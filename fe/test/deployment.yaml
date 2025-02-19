@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: feproject
+  namespace: test
+  labels:
+    app: feproject
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: feproject
+  template:
+    metadata:
+      labels:
+        app: feproject
+    spec:
+      containers:
+        - name: feproject
+          image: arthurfonichkin/feproject:809099d51bc31c1b1b5f6646bf8d7949b3b4cad3
+          ports:
+            - containerPort: 80
+          env: null
+          resources:
+            requests:
+              memory: 512Mi
+              cpu: 500m
+            limits:
+              memory: 1Gi
+              cpu: 1
