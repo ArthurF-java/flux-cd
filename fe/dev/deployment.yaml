@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -18,10 +17,10 @@ spec:
     spec:
       containers:
         - name: feproject
-          image: arthurfonichkin/feproject:b78162629d2eea4ac3729e351faf90f6b02ac416
+          image: $FULL_BUILD_NAME
           ports:
             - containerPort: 80
-          env:
+          env: null
           resources:
             requests:
               memory: 512Mi
