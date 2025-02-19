@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: feproject
+  namespace: dev
+  annotations:
+    nginx.ingress.kubernetes.io/server-alias: "fedev.k8s-16.sa"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: fedev.k8s-15.sa
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: feproject-service
+                port:
+                  number: 80
