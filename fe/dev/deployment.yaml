@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: feproject
-          image: arthurfonichkin/feproject:dev-dcfe995be29c4a65017fa6d502b6359b5481d6c6
+          image: arthurfonichkin/feproject:dev-803a12a35ded0e47e3a6d3502ca315d0ca645cd9
           ports:
             - containerPort: 80
           env: null
